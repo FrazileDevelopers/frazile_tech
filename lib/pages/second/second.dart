@@ -82,7 +82,7 @@ class _SecondScreenState extends State<SecondScreen> {
               color: widget.color,
               textColor: Colors.white,
               onPressed: () => Navigator.pushNamed(context, '/third'),
-              child: const Text('Second Screen'),
+              child: const Text('Third Screen'),
             ),
           ],
         ),

@@ -81,8 +81,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
             MaterialButton(
               color: widget.color,
               textColor: Colors.white,
-              onPressed: () {},
-              child: const Text('Second Screen'),
+              onPressed: () => Navigator.pushNamed(context, '/'),
+              child: const Text('Home Screen'),
             ),
           ],
         ),

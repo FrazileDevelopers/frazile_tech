@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'logic/cubit/counter_cubit.dart';
-import 'pages/home/home.dart';
-import 'pages/second/second.dart';
-import 'pages/third/third.dart';
+
+import 'router/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +14,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final CounterCubit _counterCubit = CounterCubit();
+  final AppRouter _appRouter = AppRouter();
 
   @override
   void dispose() {
-    _counterCubit.close();
+    _appRouter.dispose();
     super.dispose();
   }
 
@@ -33,29 +30,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      routes: {
-        '/': (context) => BlocProvider.value(
-              value: _counterCubit,
-              child: const HomeScreen(
-                title: 'Frazile Tech',
-                color: Colors.pink,
-              ),
-            ),
-        '/second': (context) => BlocProvider.value(
-              value: _counterCubit,
-              child: const SecondScreen(
-                title: 'Frazile Tech',
-                color: Colors.amber,
-              ),
-            ),
-        '/third': (context) => BlocProvider.value(
-              value: _counterCubit,
-              child: const ThirdScreen(
-                title: 'Frazile Tech',
-                color: Colors.black,
-              ),
-            ),
-      },
+      onGenerateRoute: _appRouter.onGenerateRoute,
     );
   }
 }
