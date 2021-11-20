@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fraziletech/pages/second/second.dart';
 import '../../logic/cubit/counter_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
