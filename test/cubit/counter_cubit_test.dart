@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:fraziletech/cubit/counter_cubit.dart';
+import 'package:fraziletech/logic/cubit/counter_cubit.dart';
 import 'package:test/expect.dart';
 import 'package:test/scaffolding.dart';
 
