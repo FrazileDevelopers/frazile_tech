@@ -6,12 +6,13 @@ import 'package:test/scaffolding.dart';
 void main() {
   group('CounterCubit', () {
     CounterCubit? counterCubit;
-    setUp(() {
-      counterCubit = CounterCubit();
-    });
-    tearDown(() {
-      counterCubit!.close();
-    });
+    // setUp(() {
+    //   counterCubit =
+    //       CounterCubit(internetCubit: BlocProvider.of<InternetCubit>(context));
+    // });
+    // tearDown(() {
+    //   counterCubit!.close();
+    // });
 
     test(
         'the initial state for the CounterCubit is CounterState(counterValue:0)',
