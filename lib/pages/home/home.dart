@@ -4,18 +4,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fraziletech/pages/second/second.dart';
 import '../../logic/cubit/counter_cubit.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title, required this.color})
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key, required this.title, required this.color})
       : super(key: key);
 
   final String title;
   final Color color;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FloatingActionButton(
+                  heroTag: 'btn1',
                   onPressed: () =>
                       BlocProvider.of<CounterCubit>(context).decrement(),
                   tooltip: 'Decrement',
@@ -66,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
                 FloatingActionButton(
+                  heroTag: 'btn2',
                   onPressed: () =>
                       BlocProvider.of<CounterCubit>(context).increment(),
                   tooltip: 'Increment',
@@ -81,19 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
             MaterialButton(
               color: widget.color,
               textColor: Colors.white,
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => BlocProvider.value(
-                      value: BlocProvider.of<CounterCubit>(context),
-                      child: SecondScreen(
-                        title: 'Second',
-                        color: Colors.amber,
-                      ),
-                    ),
-                  ),
-                );
-              },
+              onPressed: () => Navigator.pushNamed(context, '/second'),
               child: const Text('Second Screen'),
             ),
           ],

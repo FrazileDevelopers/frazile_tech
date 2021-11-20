@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../logic/cubit/counter_cubit.dart';
 
-class SecondScreen extends StatefulWidget {
-  const SecondScreen({Key? key, required this.title, required this.color})
+class ThirdScreen extends StatefulWidget {
+  const ThirdScreen({Key? key, required this.title, required this.color})
       : super(key: key);
 
   final String title;
   final Color color;
 
   @override
-  State<SecondScreen> createState() => _SecondScreenState();
+  State<ThirdScreen> createState() => _ThirdScreenState();
 }
 
-class _SecondScreenState extends State<SecondScreen> {
+class _ThirdScreenState extends State<ThirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,7 @@ class _SecondScreenState extends State<SecondScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FloatingActionButton(
-                  heroTag: 'btn3',
+                  heroTag: 'btn5',
                   onPressed: () =>
                       BlocProvider.of<CounterCubit>(context).decrement(),
                   tooltip: 'Decrement',
@@ -65,7 +65,7 @@ class _SecondScreenState extends State<SecondScreen> {
                   ),
                 ),
                 FloatingActionButton(
-                  heroTag: 'btn4',
+                  heroTag: 'btn6',
                   onPressed: () =>
                       BlocProvider.of<CounterCubit>(context).increment(),
                   tooltip: 'Increment',
@@ -81,7 +81,7 @@ class _SecondScreenState extends State<SecondScreen> {
             MaterialButton(
               color: widget.color,
               textColor: Colors.white,
-              onPressed: () => Navigator.pushNamed(context, '/third'),
+              onPressed: () {},
               child: const Text('Second Screen'),
             ),
           ],
