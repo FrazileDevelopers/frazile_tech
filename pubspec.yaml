@@ -28,6 +28,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   bloc_test: null
+  connectivity_plus: ^2.0.3
   cupertino_icons: ^1.0.2
   equatable: ^2.0.3
   flutter:
